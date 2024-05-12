@@ -1,0 +1,18 @@
+s=input()
+upp='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+lwr='abcdefghijklmnopqrstuvwxyz'
+num='0123456789'
+count1,count2,count3=0,0,0
+for i in s:
+    for j in upp:
+        if (i)==(j):
+            count1=count1+1
+    for k in lwr:
+        if(i)==(k):
+            count2=count2+1
+    for n in num:
+        if(i)==(n):
+            count3=count3+1
+print('count of uppercase:',count1)
+print('count of lowercase:',count2)
+print('count of numbers:',count3)
