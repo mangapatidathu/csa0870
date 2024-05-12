@@ -1,0 +1,24 @@
+def calculate(s):
+    stack = []
+    num = 0
+    op = '+'
+    s += '+'  
+    for i in range(len(s)):
+        char = s[i]
+        if char.isdigit():
+            num = num * 10 + int(char)
+        elif char in "+-*/" or i == len(s) - 1:
+            if char != ' ' and char.isdigit() == False:
+                if op == '+':
+                    stack.append(num)
+                elif op == '-':
+                    stack.append(-num)
+                elif op == '*':
+                    stack[-1] = stack[-1] * num
+                elif op == '/':
+                    stack[-1] = int(stack[-1] / num)  
+                op = char
+                num = 0
+    return sum(stack)
+expression = " 3+2*2 "
+print(calculate(expression))  
