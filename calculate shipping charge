@@ -1,0 +1,21 @@
+def calculate_shipping_charge(num_items):
+    if num_items <= 0:
+        return 0
+    elif num_items == 1:
+        return 750
+    else:
+        return 750 + (num_items - 1) * 200
+
+def main():
+    try:
+        num_items = int(input("Enter the number of items purchased: "))
+        if num_items < 0:
+            raise ValueError("Number of items cannot be negative.")
+        
+        shipping_charge = calculate_shipping_charge(num_items)
+        print("Shipping charge: {:.2f}".format(shipping_charge))
+    except ValueError as ve:
+        print("Error:", ve)
+
+if name == "main":
+    main()
