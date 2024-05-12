@@ -1,0 +1,23 @@
+def find_mth_max_and_nth_min(lst, m, n):
+    sorted_lst = sorted(lst)
+    mth_max = sorted_lst[-m]
+    nth_min = sorted_lst[n - 1]
+    return mth_max, nth_min
+
+def calculate_sum_and_difference(lst, m, n):
+    mth_max, nth_min = find_mth_max_and_nth_min(lst, m, n)
+    summation = mth_max + nth_min
+    difference = mth_max - nth_min
+    return summation, difference
+
+# Example list
+my_list = [10, 20, 30, 40, 50, 60, 70]
+
+# Example values for M and N
+M = 2
+N = 3
+
+# Calculate sum and difference
+sum_result, diff_result = calculate_sum_and_difference(my_list, M, N)
+print("Sum:", sum_result)
+print("Difference:", diff_result)
