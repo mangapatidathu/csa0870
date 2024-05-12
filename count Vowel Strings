@@ -1,0 +1,5 @@
+def countVowelStrings(n):
+    from math import comb
+    return comb(n + 5 - 1, 5 - 1)
+n = 33
+print(f"The number of lexicographically sorted strings of length {n} is: {countVowelStrings(n)}")
